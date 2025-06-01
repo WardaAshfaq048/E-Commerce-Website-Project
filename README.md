@@ -33,7 +33,7 @@ The website is made as a jewelry shop but can be adapted for any type of online 
 * Do everything non-registered users can
 * Add products to cart
 * Add products to wishlist
-* Write reviews and comments on products
+* Write reviews and comments on products 
 * Edit and delete their own reviews and comments
 * View order status and history
 * Update profile, change password, and reset password
