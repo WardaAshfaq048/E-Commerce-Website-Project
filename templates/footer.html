@@ -1,0 +1,133 @@
+{% load static %}
+<footer class="footer-elegant text-light py-5" style="background-image: url('{% static 'img/gallery-img-3.jpg' %}'); background-size: cover; background-position: center;">
+  <div class="container">
+    <div class="row">
+      <!-- Logo and Tagline -->
+      <div class="col-md-4 mb-4">
+        <h3 class="font-weight-bold mb-3 animated-text">Silver Luxe</h3>
+        <p class="animated-text">Your one-stop shop for timeless silver jewelry. Crafted with precision, designed to elevate your style.</p>
+      </div>
+      
+      <!-- Links Section -->
+      <div class="col-md-4 mb-4">
+        <h5 class="text-uppercase mb-4 animated-text">Explore</h5>
+        <ul class="list-unstyled">
+          <li><a class="footer-link-elegant animated-link" href="#">Shop All</a></li>
+          <li><a class="footer-link-elegant animated-link" href="#">New Arrivals</a></li>
+          <li><a class="footer-link-elegant animated-link" href="#">Best Sellers</a></li>
+          <li><a class="footer-link-elegant animated-link" href="#">Gift Cards</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact and Social Links -->
+      <div class="col-md-4">
+        <h5 class="text-uppercase mb-4 animated-text">Contact Us</h5>
+        <p>Email: <a class="footer-link-elegant animated-link" href="mailto:info@silverluxe.com">info@silverluxe.com</a></p>
+        <p>Phone: <a class="footer-link-elegant animated-link" href="tel:+1234567890">+1 234 567 890</a></p>
+        <ul class="list-unstyled d-flex social-icons-elegant mt-3">
+          <li><a class="footer-link-elegant animated-icon" href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a class="footer-link-elegant animated-icon" href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a class="footer-link-elegant animated-icon" href="#"><i class="fab fa-instagram"></i></a></li>
+          <li><a class="footer-link-elegant animated-icon" href="#"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center border-top-elegant pt-4 mt-4">
+      <p class="small mb-0 animated-text">&copy; 2024 Silver Luxe. All Rights Reserved. Designed by <a class="text-light" href="#" target="_blank">Warda</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+/* Elegant Footer Styling */
+.footer-elegant {
+  color: #f1f1f1;
+  animation: fadeIn 2s ease-in-out;
+  padding: 40px 0;
+}
+
+.footer-link-elegant {
+  color: #f1f1f1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link-elegant:hover {
+  color: #ff6f61; /* Soft coral hover effect */
+}
+
+.social-icons-elegant {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-icons-elegant li {
+  display: inline-block;
+  margin-right: 15px;
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+.social-icons-elegant i {
+  font-size: 20px;
+  color: #f1f1f1;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons-elegant i:hover {
+  color: #ff6f61;
+  transform: scale(1.2);
+}
+
+.border-top-elegant {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h3, h5 {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1.5px;
+}
+
+.container {
+  max-width: 1140px;
+  padding: 20px;
+  margin: auto;
+}
+
+/* Animation for links and icons */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animated-text {
+  animation: fadeIn 1.5s ease-out;
+}
+
+.animated-link {
+  animation: fadeIn 1.5s ease-out 0.5s forwards;
+}
+
+.animated-icon {
+  animation: bounce 1.5s ease-in-out infinite;
+}
+</style>
+
+<!-- Ensure Font Awesome and Bootstrap are included -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">

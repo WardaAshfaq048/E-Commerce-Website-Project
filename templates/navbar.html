@@ -1,0 +1,153 @@
+{% load static %}
+
+<!-- Navbar -->
+<header class="header">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black px-5 py-3">
+    <!-- Left Section: Logo and Navigation -->
+    <a class="navbar-brand" href="{% url 'store:home' %}">
+      <img src="{% static 'img/db2ac14821b0e7e3474112e805c69617.jpg' %}" alt="Logo" class="animated-logo">
+
+
+      <span class="jewelry-title">Jewelry</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-light" href="{% url 'store:home' %}">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-light" href="#" id="categoriesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+          <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+            {% if categories_menu %}
+              {% for cat_menu in categories_menu %}
+                <a class="dropdown-item text-dark" href="{% url 'store:category-products' cat_menu.slug %}">{{ cat_menu.title }}</a>
+              {% endfor %}
+            {% endif %}
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-dark" href="{% url 'store:all-categories' %}">All Categories</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="{% url 'store:blog_list' %}">Blog</a>
+        </li>
+       
+      </ul>
+    </div>
+
+    <!-- Right Section: Wishlist, Cart, My Account -->
+    <div class="navbar-right d-flex align-items-center">
+      <a class="nav-link text-light" href="{% url 'store:cart' %}">
+        <i class="fas fa-shopping-cart mr-2"></i>Cart
+      </a>
+      <a class="nav-link text-light" href="#">
+        <i class="far fa-heart mr-2"></i>Wishlist
+      </a>
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-light" href="#" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user-circle mr-2"></i>My Account
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+          <a class="dropdown-item" href="{% url 'store:profile' %}">Profile</a>
+          <a class="dropdown-item" href="{% url 'store:cart' %}">Cart</a>
+          <a class="dropdown-item" href="{% url 'store:orders' %}">Orders</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'store:logout' %}">Log Out</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<style>/* General Navbar Styling */
+  .header {
+    background-color: #000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Logo and Title Styling */
+  .animated-logo {
+  width: 50px;
+  height: 50px;
+  animation: bounce 2s infinite;
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image scales properly within the circle */
+  border: 2px solid #ffcc00; /* Optional: Adds a border around the circle */
+}
+  
+  .jewelry-title {
+    font-size: 28px;
+    font-family: 'Georgia', serif;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: 10px;
+    animation: glow 2s infinite;
+  }
+  
+  /* Glow Animation */
+  @keyframes glow {
+    0%, 100% {
+      text-shadow: 0 0 10px #fff, 0 0 20px #ffcc00, 0 0 30px #ffcc00;
+    }
+    50% {
+      text-shadow: 0 0 20px #fff, 0 0 40px #ffcc00, 0 0 60px #ffcc00;
+    }
+  }
+  
+  /* Navbar Links */
+  .navbar-nav .nav-link {
+    font-size: 16px;
+    font-weight: 500;
+    color: #ccc;
+    margin-right: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+  }
+  
+  /* Dropdown Menu */
+  .dropdown-menu {
+    background-color: #222;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dropdown-menu .dropdown-item {
+    color: #000000;
+    padding: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .dropdown-menu .dropdown-item:hover {
+    background-color: #ffcc00;
+    color: #000000;
+  }
+  
+  /* Cart, Wishlist, and My Account */
+  .navbar-right .nav-link {
+    display: flex;
+    align-items: center;
+    color: #ccc;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .navbar-right .nav-link:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+  }
+  
+  /* Bounce Animation for Logo */
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  </style>
